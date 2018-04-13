@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="836.0" style="-fx-background-color: #0DD7D0;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichageArticleController">
+   <children>
+      <ScrollPane layoutY="68.0" prefHeight="820.0" prefWidth="1000.0">
+         <content>
+            <AnchorPane prefHeight="820.0" prefWidth="977.0">
+               <children>
+                  <SplitPane dividerPositions="0.29797979797979796" orientation="VERTICAL" prefHeight="820.0" prefWidth="986.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="998.0">
+                           <children>
+                              <ListView fx:id="listview" layoutX="-5.0" layoutY="25.0" prefHeight="214.0" prefWidth="273.0" />
+                              <Label fx:id="titre" layoutX="321.0" layoutY="28.0" prefHeight="27.0" prefWidth="477.0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="auteur" layoutX="369.0" layoutY="74.0" prefHeight="27.0" prefWidth="115.0" />
+                              <Label fx:id="date1" layoutX="369.0" layoutY="110.0" prefHeight="27.0" prefWidth="130.0" />
+                              <Label layoutX="276.0" layoutY="77.0" text="Greer par :">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="271.0" layoutY="113.0" text="Date Creation :">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="271.0" layoutY="28.0" text="Titre :">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="6.0" layoutY="1.0" prefHeight="27.0" prefWidth="191.0" text="La liste des Artciles :">
+                                 <font>
+                                    <Font name="System Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ToolBar fx:id="barSearch" layoutX="285.0" layoutY="167.0" prefHeight="35.0" prefWidth="336.0">
+                                 <items>
+                                    <JFXButton fx:id="buttonCloseSearch" onAction="#searchtitre" style="-fx-background-color: #0DD7D0;" text="Serach" />
+                                    <TextField fx:id="Search1" prefHeight="25.0" prefWidth="258.0" />
+                                    <Label fx:id="labelMatches" />
+                                 </items>
+                              </ToolBar>
+                              <JFXButton fx:id="reflichir" layoutX="660.0" layoutY="172.0" onAction="#reflichir" text="Reflichir" />
+                             
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1000.0">
+                           <children>
+                              <Label layoutX="-27.0" layoutY="201.0" prefHeight="35.0" prefWidth="187.0" text="     Contenu :">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane layoutX="1.0" layoutY="-4.0" prefHeight="209.0" prefWidth="372.0">
+                                 <content>
+                                    <ImageView fx:id="image" fitHeight="205.0" fitWidth="370.0" pickOnBounds="true" preserveRatio="true" />
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane layoutX="371.0" prefHeight="206.0" prefWidth="424.0">
+                                 <content>
+                                    <MediaView fx:id="mediaview" fitHeight="200.0" fitWidth="420.0" />
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane layoutX="7.0" layoutY="258.0" prefHeight="161.0" prefWidth="976.0">
+                                 <content>
+                                    <Text fx:id="text" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="655.0000094175339">
+                                       <font>
+                                          <Font name="Arial Italic" size="12.0" />
+                                       </font>
+                                    </Text>
+                                 </content>
+                              </ScrollPane>
+                              <Label layoutX="-8.0" layoutY="419.0" prefHeight="29.0" prefWidth="211.0" text="  Commentaires :">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane layoutX="1.0" layoutY="454.0" prefHeight="172.0" prefWidth="444.0">
+                                 <content>
+                                    <ListView fx:id="listcomment" prefHeight="200.0" prefWidth="431.0" />
+                                 </content></ScrollPane>
+                              <Text fx:id="textcomment" layoutX="582.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="408.13671875" />
+                              <JFXTextArea fx:id="textcommentaire" layoutX="454.0" layoutY="422.0" maxWidth="493.0" minWidth="454.0" prefHeight="57.0" prefWidth="462.0" promptText="Comment" />
+                              <JFXButton fx:id="ajoutcom" layoutX="930.0" layoutY="424.0" onAction="#ajoutercomm" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: #0DD7D0;" text="ADD" />
+                              <JFXButton fx:id="play" layoutX="795.0" layoutY="14.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #0DD7D0;" text="Play" />
+                              <JFXButton fx:id="stop" layoutX="795.0" layoutY="51.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #0DD7D0;" text="Stop" />
+                              <Rating fx:id="rating" layoutX="552.0" layoutY="491.0" />
+                              <Label fx:id="labrating" layoutX="767.0" layoutY="498.0" />
+                              <Text fx:id="tedate" layoutX="520.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <Label layoutX="464.0" layoutY="498.0" prefHeight="21.0" prefWidth="57.0" text="Note :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="448.0" layoutY="521.0" prefHeight="21.0" prefWidth="121.0" text="Commentaire :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="464.0" layoutY="546.0" prefHeight="21.0" prefWidth="57.0" text="Date :">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label fx:id="id" layoutX="-173.0" layoutY="296.0" />
+   </children>
+</AnchorPane>
